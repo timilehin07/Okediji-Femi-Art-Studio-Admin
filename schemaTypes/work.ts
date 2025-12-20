@@ -4,6 +4,7 @@ export default defineType({
   name: "work",
   title: "Work",
   type: "document",
+
   fields: [
     defineField({
       name: "title",
@@ -12,12 +13,21 @@ export default defineType({
       validation: Rule => Rule.required(),
     }),
 
+    /**
+     * 🔥 MULTIPLE IMAGES (Front, Side, Back, etc.)
+     */
     defineField({
-      name: "image",
-      title: "Artwork Image",
-      type: "image",
-      options: { hotspot: true },
-      validation: Rule => Rule.required(),
+      name: "images",
+      title: "Artwork Images",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          options: { hotspot: true },
+        },
+      ],
+      validation: Rule => Rule.min(1).required(),
+      description: "Upload images in order: Front → Side → Back → Other views",
     }),
 
     defineField({
