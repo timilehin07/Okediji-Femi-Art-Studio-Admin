@@ -42,12 +42,30 @@ export default defineType({
       type: "string",
     }),
 
-    defineField({
+   defineField({
       name: "price",
       title: "Price",
+      type: "object",
+      fields: [
+    {
+      name: "amount",
+      title: "Amount",
       type: "number",
-      description: "Leave empty if sold or not for sale",
-    }),
+    },
+    {
+      name: "currency",
+      title: "Currency",
+      type: "string",
+      options: {
+        list: [
+          { title: "Naira (₦)", value: "NGN" },
+          { title: "Dollar ($)", value: "USD" },
+        ],
+      },
+    },
+  ],
+  description: "Leave empty if sold or not for sale",
+}),
 
     defineField({
       name: "status",
