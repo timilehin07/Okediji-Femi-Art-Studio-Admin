@@ -1,6 +1,6 @@
-import { defineField, defineType } from "sanity"
+import {defineType, defineField} from "sanity"
 
-export default defineType({
+export const processStep = defineType({
   name: "processStep",
   title: "Process Step",
   type: "object",
@@ -10,6 +10,7 @@ export default defineType({
       name: "title",
       title: "Step Title",
       type: "string",
+      validation: Rule => Rule.required(),
     }),
 
     defineField({
@@ -21,7 +22,7 @@ export default defineType({
 
     defineField({
       name: "image",
-      title: "Image",
+      title: "Step Image",
       type: "image",
       options: {
         hotspot: true,
