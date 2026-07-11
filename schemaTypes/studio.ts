@@ -1,6 +1,6 @@
-import { defineField, defineType } from "sanity"
+import {defineField, defineType} from "sanity"
 
-export default defineType({
+export const studio = defineType({
   name: "studio",
   title: "The Studio",
   type: "document",
@@ -10,6 +10,7 @@ export default defineType({
       name: "title",
       title: "Title",
       type: "string",
+      initialValue: "The Studio",
     }),
 
     defineField({
@@ -30,7 +31,7 @@ export default defineType({
 
     defineField({
       name: "gallery",
-      title: "Studio Gallery",
+      title: "Gallery",
       type: "array",
       of: [
         {
