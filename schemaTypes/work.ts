@@ -42,6 +42,21 @@ export default defineType({
     }),
 
     defineField({
+      name: "category",
+      title: "Artwork Category",
+      type: "string",
+      options: {
+        list: [
+          { title: "Abstract", value: "abstract" },
+          { title: "Figurative", value: "figurative" },
+        ],
+        layout: "radio",
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+
+
+    defineField({
       name: "year",
       title: "Year",
       type: "string",
