@@ -6,4 +6,4 @@ import process from "./process"
 import processStep from "./processStep"
 import { commissionWork } from "./commissionWork"
 
-export const schemaTypes = [home, about, work, studio, process, processStep, commissionwork]
+export const schemaTypes = [home, about, work, studio, process, processStep, commissionWork]
