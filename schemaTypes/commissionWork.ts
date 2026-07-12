@@ -10,6 +10,7 @@ export const commissionWork = defineType({
       name: "title",
       title: "Title",
       type: "string",
+      validation: Rule => Rule.required(),
     }),
 
     defineField({
@@ -25,12 +26,54 @@ export const commissionWork = defineType({
     }),
 
     defineField({
+      name: "commissionedFor",
+      title: "Commissioned For",
+      type: "string",
+      description: "Client, organization or individual",
+    }),
+
+    defineField({
+      name: "location",
+      title: "Location",
+      type: "string",
+    }),
+
+    defineField({
+      name: "description",
+      title: "Description",
+      type: "text",
+      rows: 4,
+    }),
+
+    defineField({
+      name: "featuredWith",
+      title: "Featured With",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "People or organizations associated with this work",
+    }),
+
+    defineField({
       name: "image",
-      title: "Image",
+      title: "Main Image",
       type: "image",
       options: {
         hotspot: true,
       },
+    }),
+
+    defineField({
+      name: "gallery",
+      title: "Gallery Images",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          options: {
+            hotspot: true,
+          },
+        },
+      ],
     }),
 
     defineField({
@@ -44,6 +87,7 @@ export const commissionWork = defineType({
   preview: {
     select: {
       title: "title",
+      subtitle: "commissionedFor",
       media: "image",
     },
   },
