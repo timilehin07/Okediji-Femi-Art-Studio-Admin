@@ -68,6 +68,24 @@ export default defineType({
       type: "string",
     }),
 
+    defineField({
+  name: "dimensions",
+  title: "Dimensions",
+  type: "string",
+}),
+
+defineField({
+  name: "weight",
+  title: "Weight",
+  type: "string",
+}),
+
+defineField({
+  name: "editionSize",
+  title: "Edition Size",
+  type: "string",
+}),
+
    defineField({
       name: "price",
       title: "Price",
